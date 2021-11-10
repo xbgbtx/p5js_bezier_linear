@@ -13,11 +13,11 @@ function setup()
 function draw() 
 {
     background(128);
-    renderPoint(p0,
+    MS.renderPoint(p0,
     {
         label : "p0",
     });
-    renderPoint(p1,
+    MS.renderPoint(p1,
     {
         label : "p1",
     });
@@ -28,20 +28,9 @@ function draw()
         p5.Vector.mult(p0, 1-t), 
         p5.Vector.mult(p1, t)
     );
-    renderPoint(pt,
+    MS.renderPoint(pt,
     {
         label : `t=${t}`,
     });
 }
 
-function renderPoint(p, {label}={})
-{
-    strokeWeight(5);
-    point(p);
-    
-    if ( label )
-    {
-        textAlign(RIGHT);
-        text(label, p.x-3, p.y-3);
-    }
-}

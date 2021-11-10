@@ -1,0 +1,3 @@
+[submodule "math-sketch-common"]
+	path = math-sketch-common
+	url = https://github.com/xbgbtx/math-sketch-common
