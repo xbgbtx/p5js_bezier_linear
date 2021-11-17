@@ -12,14 +12,21 @@ function setup()
 
 function draw() 
 {
-    background(128);
+    background(MS.colors.background);
+
+    stroke(MS.colors.foreground[0]);
+    strokeWeight(1);
+    line(p0.x, p0.y, p1.x, p1.y);
+
     MS.renderPoint(p0,
     {
         label : "p0",
+        color : MS.colors.foreground[1],
     });
     MS.renderPoint(p1,
     {
         label : "p1",
+        color : MS.colors.foreground[2],
     });
     
     t=tSlider.value();
@@ -31,6 +38,7 @@ function draw()
     MS.renderPoint(pt,
     {
         label : `t=${t}`,
+        color : MS.colors.foreground[3],
     });
 }
 
