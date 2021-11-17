@@ -1,5 +1,8 @@
 let p0, p1, t, tSlider;
 
+//point being dragged
+let dragged;
+
 function setup() 
 {
     createCanvas(400,400);
@@ -40,5 +43,31 @@ function draw()
         label : `t=${t}`,
         color : MS.colors.foreground[3],
     });
+}
+
+function mousePressed()
+{
+    let draggable = [p0, p1];
+    let mouse_pos = new p5.Vector(mouseX, mouseY);
+
+    for ( const p of draggable )
+    {
+        if ( p5.Vector.dist(mouse_pos, p ) < 10 )
+            dragged = p;
+    }
+}
+
+function mouseReleased ()
+{
+    dragged = undefined;
+}
+
+function mouseDragged ()
+{
+    if ( dragged )
+    {
+        dragged.x = mouseX;
+        dragged.y = mouseY;
+    }
 }
 
