@@ -1,8 +1,5 @@
 let p0, p1, t, tSlider;
 
-//point being dragged
-let dragged;
-
 function setup() 
 {
     createCanvas(400,400);
@@ -11,10 +8,36 @@ function setup()
     t = 0.5;
     tSlider = createSlider(0, 1,t, 0.05);
     tSlider.position(10,10);
+
+    add_interaction_cbs();
+}
+
+function add_interaction_cbs ()
+{
+    let point_drag = (p) =>
+    {
+        p.x = mouseX;
+        p.y = mouseY;
+    };
+
+    MS.add_interaction_cb ({
+        mouse_pressed : () => {
+            let draggable = [p0, p1];
+            let mouse_pos = new p5.Vector(mouseX, mouseY);
+
+            for ( const p of draggable )
+            {
+                if ( p5.Vector.dist(mouse_pos, p ) < 10 )
+                    MS.start_drag(() => point_drag(p));
+            }
+        }
+    });
 }
 
 function draw() 
 {
+    MS.handle_interaction ();
+
     background(MS.colors.background);
 
     stroke(MS.colors.foreground[0]);
@@ -43,31 +66,5 @@ function draw()
         label : `t=${t}`,
         color : MS.colors.foreground[3],
     });
-}
-
-function mousePressed()
-{
-    let draggable = [p0, p1];
-    let mouse_pos = new p5.Vector(mouseX, mouseY);
-
-    for ( const p of draggable )
-    {
-        if ( p5.Vector.dist(mouse_pos, p ) < 10 )
-            dragged = p;
-    }
-}
-
-function mouseReleased ()
-{
-    dragged = undefined;
-}
-
-function mouseDragged ()
-{
-    if ( dragged )
-    {
-        dragged.x = mouseX;
-        dragged.y = mouseY;
-    }
 }
 
