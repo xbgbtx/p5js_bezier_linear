@@ -20,18 +20,9 @@ function add_interaction_cbs ()
         p.y = mouseY;
     };
 
-    MS.add_interaction_cb ({
-        mouse_pressed : () => {
-            let draggable = [p0, p1];
-            let mouse_pos = new p5.Vector(mouseX, mouseY);
-
-            for ( const p of draggable )
-            {
-                if ( p5.Vector.dist(mouse_pos, p ) < 10 )
-                    MS.start_drag(() => point_drag(p));
-            }
-        }
-    });
+    MS.add_interaction_cb ( 
+        MS.Interactions.drag_points ( [p0, p1], point_drag )
+    );
 }
 
 function draw() 
