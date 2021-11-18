@@ -29,9 +29,10 @@ function add_interaction_cbs ()
         t = line_t_nearest_point ( p0, p1, createVector(mouseX,mouseY) );
     };
 
-    MS.add_interaction_cb ( 
-        MS.Interactions.drag_points ( [pt], t_drag )
-    );
+    let t_interaction = MS.Interactions.drag_points ( [pt], t_drag );
+    t_interaction.priority = 10;
+
+    MS.add_interaction_cb ( t_interaction  );
 }
 
 //Return vector2 (x,y) on line segment at time t
