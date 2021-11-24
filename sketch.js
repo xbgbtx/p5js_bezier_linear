@@ -2,7 +2,7 @@ let p0, p1, t, pt;
 
 function setup() 
 {
-    createCanvas(400,400);
+    createCanvas(windowWidth, windowHeight);
     p0 = createVector(100,300);
     p1 = createVector(300,100);
     pt = createVector(0,0);
@@ -10,6 +10,10 @@ function setup()
     t = 0.5;
 
     add_interaction_cbs();
+}
+
+function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
 }
 
 function add_interaction_cbs ()
