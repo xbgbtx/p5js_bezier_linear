@@ -13,4 +13,12 @@ body {
 
    /* This centers our sketch vertically. */
    align-items: center;
+
+   touch-action: none;
 }
+
+canvas
+{
+   width: 90%;
+}
+
