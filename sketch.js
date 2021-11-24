@@ -20,7 +20,7 @@ function windowResized() {
 
 function mouseDragged ( e )
 {
-    console.log(`${mouseX}, ${mouseY}`);
+    e.preventDefault();
 }
 
 function add_interaction_cbs ()
