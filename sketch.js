@@ -18,6 +18,11 @@ function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
 }
 
+function mouseDragged ( e )
+{
+    console.log(`${mouseX}, ${mouseY}`);
+}
+
 function add_interaction_cbs ()
 {
     let point_drag = (p) =>
