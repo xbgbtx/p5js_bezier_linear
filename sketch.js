@@ -2,7 +2,9 @@ let p0, p1, t, pt;
 
 function setup() 
 {
-    createCanvas(windowWidth, windowHeight);
+    let = createCanvas(windowWidth, windowHeight);
+    console.log( r);
+
     p0 = createVector(100,300);
     p1 = createVector(300,100);
     pt = createVector(0,0);
