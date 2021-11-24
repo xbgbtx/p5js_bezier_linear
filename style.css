@@ -15,4 +15,6 @@ body {
    align-items: center;
 
    touch-action: none;
+
+   overflow: hidden;
 }
