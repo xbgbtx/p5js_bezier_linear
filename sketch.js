@@ -18,10 +18,10 @@ function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
 }
 
-function mouseDragged ( e )
-{
-    e.preventDefault();
-}
+//function mouseDragged ( e )
+//{
+//    e.preventDefault();
+//}
 
 function add_interaction_cbs ()
 {
