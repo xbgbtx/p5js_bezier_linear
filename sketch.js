@@ -18,15 +18,6 @@ function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
 }
 
-document.addEventListener ( "touchmove",
-    e => e.preventDefault(),
-    {passive : false});
-
-//function mouseDragged ( e )
-//{
-//    e.preventDefault();
-//}
-
 function add_interaction_cbs ()
 {
     let point_drag = (p) =>
