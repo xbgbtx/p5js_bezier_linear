@@ -18,6 +18,10 @@ function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
 }
 
+document.addEventListener ( "touchmove",
+    e => e.preventDefault(),
+    {passive : false});
+
 //function mouseDragged ( e )
 //{
 //    e.preventDefault();
