@@ -14,9 +14,9 @@ function setup()
     add_interaction_cbs();
 }
 
-function windowResized() {
-    resizeCanvas(windowWidth, windowHeight);
-}
+//function windowResized() {
+//    resizeCanvas(windowWidth, windowHeight);
+//}
 
 function add_interaction_cbs ()
 {
