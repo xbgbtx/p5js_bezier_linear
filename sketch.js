@@ -2,6 +2,8 @@ let p0, p1, t, pt;
 
 function setup() 
 {
+    let density = displayDensity();
+    pixelDensity(density);
     createCanvas(512, 512);
 
     p0 = createVector(100,300);
