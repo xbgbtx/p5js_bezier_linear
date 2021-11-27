@@ -2,7 +2,7 @@ let p0, p1, t, pt;
 
 function setup() 
 {
-    createCanvas(512, 512);
+    MS.create_canvas();
 
     p0 = createVector(100,300);
     p1 = createVector(300,100);
