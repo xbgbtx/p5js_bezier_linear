@@ -15,19 +15,21 @@ function setup()
 
 function add_interaction_cbs ()
 {
-    let point_drag = (p) =>
+    let point_drag = (p, drag_data) =>
     {
-        p.x = mouseX;
-        p.y = mouseY;
+        p.x = drag_data.pointerX;
+        p.y = drag_data.pointerY;
     };
 
     MS.add_interaction_cb ( 
         MS.Interactions.drag_points ( [p0, p1], point_drag )
     );
 
-    let t_drag = (p) =>
+    let t_drag = (p, drag_data) =>
     {
-        t = line_t_nearest_point ( p0, p1, createVector(mouseX,mouseY) );
+        const drag_point = createVector(
+            drag_data.pointerX,drag_data.pointerY);
+        t = line_t_nearest_point ( p0, p1, drag_point );
     };
 
     let t_interaction = MS.Interactions.drag_points ( [pt], t_drag );
