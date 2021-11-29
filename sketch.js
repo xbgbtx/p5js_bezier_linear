@@ -69,7 +69,7 @@ function update_pt()
 
 function draw() 
 {
-    MS.handle_interaction ();
+    //MS.handle_interaction ();
 
     update_pt();
 
