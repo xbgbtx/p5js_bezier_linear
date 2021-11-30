@@ -85,14 +85,14 @@ function draw()
     {
         label : "p0",
         color : MS.colors.foreground[1],
-        point_weight : 10,
+        point_weight : 13,
         text_size :20,
     });
     MS.renderPoint(p1,
     {
         label : "p1",
         color : MS.colors.foreground[2],
-        point_weight : 10,
+        point_weight : 13,
         text_size :20,
     });
     
@@ -100,7 +100,7 @@ function draw()
     {
         label : `t=${t.toFixed(2)}`,
         color : MS.colors.foreground[3],
-        point_weight : 10,
+        point_weight : 13,
         text_size :20,
     });
 }
