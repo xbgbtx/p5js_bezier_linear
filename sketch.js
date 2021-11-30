@@ -78,24 +78,30 @@ function draw()
     background(MS.colors.background);
 
     stroke(MS.colors.foreground[0]);
-    strokeWeight(1);
+    strokeWeight(3);
     line(p0.x, p0.y, p1.x, p1.y);
 
     MS.renderPoint(p0,
     {
         label : "p0",
         color : MS.colors.foreground[1],
+        point_weight : 10,
+        text_size :20,
     });
     MS.renderPoint(p1,
     {
         label : "p1",
         color : MS.colors.foreground[2],
+        point_weight : 10,
+        text_size :20,
     });
     
     MS.renderPoint(pt,
     {
         label : `t=${t.toFixed(2)}`,
         color : MS.colors.foreground[3],
+        point_weight : 10,
+        text_size :20,
     });
 }
 
