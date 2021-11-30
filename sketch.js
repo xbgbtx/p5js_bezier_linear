@@ -4,8 +4,8 @@ function setup()
 {
     MS.create_canvas();
 
-    p0 = createVector(100,300);
-    p1 = createVector(300,100);
+    p0 = createVector(64,448);
+    p1 = createVector(448,64);
     pt = createVector(0,0);
 
     t = 0.5;
